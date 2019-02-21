@@ -27,7 +27,7 @@ Basic Layers and Component Interactios
 Project is developed using Spring Boot 2.x version and follow standards layers architecture. A Rest Controller exposes Rest Services and interact with Spring Service layer. Spring Service layer interact with Spring Repository for Releational DB and Elastic Search. A scheduler is scheduled to fetch current exchange rate from [bitcoinaverage.com] and stores current rate in MySQL and store existing one in a Elastic Search repository. It uses spring cache , if rate fetch from the esternal service is same as that of last exchange rate it does not update existing rates and also does not includes data in history. 
 Following digram depicts major compoents and its interactions.
 
-![Flow diagram](/3DTest.png)/diagrams/interactiondiagrams.png	
+![Flow diagram](/diagrams/interactiondiagrams.png	)
 
 Basic flow diagram 
 
