@@ -8,7 +8,7 @@ Project Approach
 
 At the beginning, first we need to create a plan to crate to each requirements and provide a verification or done criteria for each requirement. Here, I follow agile principle to design and develop and test given assignment. As per agile process I first create the stories   and assign story points and dependency on each story.
 
-![User Stories](/diagrams/stories.png	)
+![User Stories](https://github.com/sougatamaitratcs/searchmetrics/blob/master/diagrams/Stories.PNG	)
 
 Design and Development Approach 
 
