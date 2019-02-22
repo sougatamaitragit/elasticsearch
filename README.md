@@ -37,7 +37,7 @@ Following digram depicts major compoents and its interactions.
 Setup - Application and database setup steps 
 
  kindly do the followings - 
-a. DB set up - login to mysql prompt and run data-localdb.sql and schema-localdb.sql files . These will create a database and creates table in database and will insert records in CURRENCY master table 
+a. DB set up - login to mysql prompt using root and run data-localdb.sql and schema-localdb.sql files [ These file are available under sql folder of the repository] . These will create a database and creates table in database and will insert records in CURRENCY master table 
 
 b. Elastic Serach - Make sure elastic search is running - 
 
