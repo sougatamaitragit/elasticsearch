@@ -10,6 +10,8 @@ At the beginning, first we need to create a plan for developmet and provide a ve
 Here, I follow agile principle to design , develop and test given assignment. As per agile process I first create the stories   and assign story points and dependency and done criteria or acceptance criteria for  each story.
 
 ![User Stories](https://github.com/sougatamaitratcs/searchmetrics/blob/master/diagrams/Stories.PNG	)
+ 
+                    Story Points
 
 Design and Development Approach 
 
@@ -30,7 +32,7 @@ Following digram depicts major compoents and its interactions.
 
 ![Flow diagram](/diagrams/interactiondiagrams.png	)
 
-Basic flow diagram 
+              Basic Component Interaction Diagram  diagram 
 
 Setup - Application and database setup steps 
 
