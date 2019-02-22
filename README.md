@@ -6,15 +6,16 @@ Approach to given assigment .
 
 Project Approach 
 
-At the beginning, first we need to create a plan to crate to each requirements and provide a verification or done criteria for each requirement. Here, I follow agile principle to design and develop and test given assignment. As per agile process I first create the stories   and assign story points and dependency on each story.
+At the beginning, first we need to create a plan for developmet and provide a verification or done criteria for each requirements. Plan will contain work break down or stories , story points,  schedule and resourcing  , dependencies , done criteria.
+Here, I follow agile principle to design , develop and test given assignment. As per agile process I first create the stories   and assign story points and dependency and done criteria or acceptance criteria for  each story.
 
 ![User Stories](https://github.com/sougatamaitratcs/searchmetrics/blob/master/diagrams/Stories.PNG	)
 
 Design and Development Approach 
 
-Once stories are done , started identifying all cross cutting and NFR concerns including logging / transaction /performance / deployment  and developing componenets for them .Then started identifying packages and low level classes and its responsibilities.
-Once packages and classes are designed then looking for interactions among each classes and designing inetrafces for inetractions . It includes public interfaces as well in class to class inetraction interfaces. Once interfaces or contracts are designed and developed then started building behaviour of each methods . Finally write unit test cases and mocked all external communications during building unit test cases.  Once unit testing is done then buiilding docker file and create docker images out of it. 
-Once docker images are produced then run these images and perform functional testing. 
+Once stories are done ,I  started identifying all cross cutting and NFR concerns including transaction /performance / deployment  and started designing common componenets for them . Then I identified high level packages , its responsibilities , interaction among different packages. Once packages are identified them started designing  classes in each packages keeping SOLID principles in mind . 
+Once packages and classes are designed then looking for interactions among each classes and designing inetrafces for inetractions . It includes public interfaces and also utilities . Once interfaces or contracts are designed and  then started building behaviour of each methods by writing codes  . 
+Finally write unit test cases and mocked all external communications during building unit test cases.  
 
 Pre-Requisite
 1. Jdk 1.8 
@@ -24,7 +25,7 @@ Pre-Requisite
 
 Basic Layers and Component Interactios 
 
-Project is developed using Spring Boot 2.x version and follow standards layers architecture. A Rest Controller exposes Rest Services and interact with Spring Service layer. Spring Service layer interact with Spring Repository for Releational DB and Elastic Search. A scheduler is scheduled to fetch current exchange rate from [bitcoinaverage.com] and stores current rate in MySQL and store existing one in a Elastic Search repository. It uses spring cache , if rate fetch from the esternal service is same as that of last exchange rate it does not update existing rates and also does not includes data in history. 
+Project is developed using Spring Boot 2.x version and follows standards layers architecture. A Rest Controller exposes Rest Services and interact with Spring Service layer. Spring Service layer interact with Spring Repository for Releational DB and Elastic Search. A scheduler is scheduled to fetch current exchange rate from [bitcoinaverage.com] and stores current rate in MySQL and store existing one in a Elastic Search repository. It uses spring cache , if rate fetch from the esternal service is same as that of last exchange rate it does not update existing rates and also does not includes data in history. 
 Following digram depicts major compoents and its interactions.
 
 ![Flow diagram](/diagrams/interactiondiagrams.png	)
@@ -32,6 +33,7 @@ Following digram depicts major compoents and its interactions.
 Basic flow diagram 
 
 Setup - Application and database setup steps 
+
  kindly do the followings - 
 a. DB set up - login to mysql prompt and run data-localdb.sql and schema-localdb.sql files . These will create a database and creates table in database and will insert records in CURRENCY master table 
 
@@ -51,7 +53,7 @@ d. Compile and unit test code  - Follow steps below to run compile , unit testin
   
 e. Run application - Command above create a jar file called in side target folder under application's base directory . Run following command .
 
-java -jar 
+java -jar currencyConversion-0.0.1.jar
 
 Testing Approache - Followings are the sample request for testing application 
 
@@ -70,6 +72,7 @@ Swagger documentation is available in http://localhost:8080/v2/api-docs url ( Ch
 
 
 Known Issues and Concerns
+
 1. This uses Spring Cache , in poduction it has to be backed by some distributes caching framework otherwise it will not scale.
 2. Form packaging aspect , it would be nice to use docker .
 
