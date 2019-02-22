@@ -71,7 +71,7 @@ b. Get Historic Rates
 API Documentation - API Doumentations are available in following URL - 
 
 Swagger documentation is available in http://localhost:8080/v2/api-docs url ( Change port and ip as necessary ).
-
+Swagger UI available @ http://localhost:8080/swagger-ui.html#/ ( Change port and ip as necessary ).
 
 Known Issues and Concerns
 
