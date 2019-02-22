@@ -8,7 +8,7 @@ Project Approach
 
 At the beginning, first we need to create a plan to crate to each requirements and provide a verification or done criteria for each requirement. Here, I follow agile principle to design and develop and test given assignment. As per agile process I first create the stories   and assign story points and dependency on each story.
 
-Please see story-v1.doc file for detail stories .
+![User Stories](/diagrams/stories.png	)
 
 Design and Development Approach 
 
@@ -31,10 +31,12 @@ Following digram depicts major compoents and its interactions.
 
 Basic flow diagram 
 
-Setup 
-For setup , kindly do the followings - 
-a. DB set up - use 
+Setup - Application and database setup steps 
+ kindly do the followings - 
+a. DB set up - login to mysql prompt and run data-localdb.sql and schema-localdb.sql files . These will create a database and creates table in database and will insert records in CURRENCY master table 
+
 b. Elastic Serach - Make sure elastic search is running - 
+
 c. Modify Properties files - Update following properties of application.properties file
   i. api.key - based on your account in bitcoinaverage.com
   ii. api.secret - based on your account in bitcoinaverage.com
@@ -43,16 +45,34 @@ c. Modify Properties files - Update following properties of application.properti
   v. cron.schedular.expression - update with cron expression based on your need.
   vi. spring.data.elasticsearch.cluster-nodes - elastic search connetion string based on your environment.
   vii. spring.data.elasticsearch.cluster-name - your elastic serch clustername.
-c. Compile and unit test code - 
+d. Compile and unit test code  - Follow steps below to run compile , unit testing and packaging code
 
+  mvn clean  compile package 
+  
+e. Run application - Command above create a jar file called in side target folder under application's base directory . Run following command .
+
+java -jar 
+
+Testing Approache - Followings are the sample request for testing application 
+
+a. Get Currenct Rate
+  i. HTTP Method - GET
+  ii . URL Sample - http://localhost:8080/exchangerates/exchangerate?fromcurrency=BTC&tocurrency=USD
+  
+b. Get Historic Rates 
+  i. HTTP Method : - GET
+  ii. URL Sample : - http://localhost:8080/exchangerates/exchangeratehistory?fromcurrency=BTC&tocurrency=USD&fromDate=2019-01-01&toDate=2019-02-22&page=1&size=4
 
 
 API Documentation - API Doumentations are available in following URL - 
 
+Swagger documentation is available in http://localhost:8080/v2/api-docs url ( Change port and ip as necessary ).
+
+
 Known Issues and Concerns
 1. This uses Spring Cache , in poduction it has to be backed by some distributes caching framework otherwise it will not scale.
 2. Form packaging aspect , it would be nice to use docker .
-3. 
+
 
 
 
